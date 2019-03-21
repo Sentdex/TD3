@@ -1,25 +1,36 @@
-# Addressing Function Approximation Error in Actor-Critic Methods
+# Benchmarking TD3 and DDPG on PyBullet
 
-PyTorch implementation of Twin Delayed Deep Deterministic Policy Gradients (TD3). If you use our code or data please cite the [paper](https://arxiv.org/abs/1802.09477).
+This repo contains benchmark results for TD3 and DDPG using the [PyBullet](https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#) reinforcement learning environments; specifically Ant, HalfCheetah, Hopper, InvertedPendulum, InvertedDoublePendulum, Reacher, and Walker2D. In the [TD3 paper](https://arxiv.org/abs/1802.09477), results were reported for the [MuJoCo](http://www.mujoco.org/) version of these environments. PyBullet is a free and open-source alternative to MuJoCo, whith no license fees and no hardware lock (MuJoCo personal licenses are limited to 3 physical machines, which means you cannot run simulations in the cloud, e.g. AWS/GCP/etc).
 
-Method is tested on [MuJoCo](http://www.mujoco.org/) continuous control tasks in [OpenAI gym](https://github.com/openai/gym). 
-Networks are trained using [PyTorch 0.4](https://github.com/pytorch/pytorch) and Python 2.7. 
-
-### Usage
-The paper results can be reproduced exactly by running:
+This repo itself is a fork of the [official TD3 code](https://github.com/sfujim/TD3/) from the original authors of the TD3 paper. Per the original repo, results were generated with Python 2.7 and PyTorch 0.4. Specific to this repo, PyBullet 2.4.8 was used. To obtain these results, run:
 ```
-./experiments.sh
-```
-Experiments on single environments can be run by calling:
-```
-python2 main.py --env HalfCheetah-v1
+./run_experiments.sh
 ```
 
-Hyper-parameters can be modified with different arguments to main.py. We include an implementation of DDPG (DDPG.py) for easy comparison of hyper-parameters with TD3, this is not the implementation of "Our DDPG" as used in the paper (see OurDDPG.py). 
+## Learning curves
+Below are the learning curves for TD3, DDPG, and OurDDPG, using the algorithms in TD3.py, DDPG.py, and OurDDPG.py. Note the results for "DDPG" are *not* those presented in the TD3 paper, per the original README.
 
-Algorithms which TD3 compares against (PPO, TRPO, ACKTR, DDPG) can be found at [OpenAI baselines repository](https://github.com/openai/baselines). 
+![HalfCheetahBulletEnv](plots/HalfCheetahBulletEnv-v0.png)
+![HopperBulletEnv](plots/HopperBulletEnv-v0.png)
+![Walker2DBulletEnv](plots/Walker2DBulletEnv-v0.png)
+![AntBulletEnv](plots/AntBulletEnv-v0.png)
+![ReacherBulletEnv](plots/ReacherBulletEnv-v0.png)
+![InvertedPendulumBulletEnv](plots/InvertedPendulumBulletEnv-v0.png)
+![InvertedDoublePendulumBulletEnv](plots/InvertedDoublePendulumBulletEnv-v0.png)
 
-### Results
-Learning curves found in the paper are found under /learning_curves. Each learning curve are formatted as NumPy arrays of 201 evaluations (201,), where each evaluation corresponds to the average total reward from running the policy for 10 episodes with no exploration. The first evaluation is the randomly initialized policy network (unused in the paper). Evaluations are peformed every 5000 time steps, over a total of 1 million time steps. 
+These plots were generated via:
+```
+python plot_results.py
+```
+Details of how the plots were generated can be found in the [TD3 paper](https://arxiv.org/abs/1802.09477) figure 5, and original README file (README_orig.md). In the TD3 paper, the authors mentioned that "[c]urves are smoothed uniformly for visual clarity", so I used `scipy.ndimage.uniform_filter(data, size=7)` -- the window size was chosen arbitrarily by me.
 
-Numerical results can be found in the paper, or from the learning curves. Video of the learned agent can be found [here](https://youtu.be/x33Vw-6vzso). 
+## Pre-trained models
+Pre-trained models can be downloaded from here (TBD).
+
+## Agent visualization
+To visualize a saved agent, run the following:
+```
+python eval.py --policy TD3 --env_name HalfCheetahBulletEnv-v0 --filename TD3_HalfCheetahBulletEnv-v0_0 --visualize
+```
+
+For more details, please refer to the code in 'eval.py'.
