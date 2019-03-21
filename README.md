@@ -19,6 +19,8 @@ This repo itself is a fork of the [official TD3 code](https://github.com/sfujim/
 ## Learning curves
 Below are the learning curves for TD3, OurDDPG, and DDPG, using the algorithms in 'TD3.py', 'OurDDPG.py', and 'DDPG.py'. Results for "TD3" and "OurDDPG" should serve as the PyBullet counterpart to the MuJoCo-based results in the original paper. Note the results for "DDPG" do *not* correspond to those presented in the TD3 paper (see [original README file](README_orig.md)), but still serve as a good reference point nonetheless.
 
+Per the TD3 paper, in the learning curves, the solid line represents the average over 10 trials, whereas the shaded area represents half a standard deivation over those 10 trials. The curves were smoothed uniformly for visual clarity, using `scipy.ndimage.uniform_filter(data, size=7)` (the window size was chosen arbitrarily by me).
+
 ![HalfCheetahBulletEnv](plots/HalfCheetahBulletEnv-v0.png)
 ![HopperBulletEnv](plots/HopperBulletEnv-v0.png)
 ![Walker2DBulletEnv](plots/Walker2DBulletEnv-v0.png)
@@ -27,11 +29,10 @@ Below are the learning curves for TD3, OurDDPG, and DDPG, using the algorithms i
 ![InvertedPendulumBulletEnv](plots/InvertedPendulumBulletEnv-v0.png)
 ![InvertedDoublePendulumBulletEnv](plots/InvertedDoublePendulumBulletEnv-v0.png)
 
-These plots were generated via:
+For more details on how the curves were generated, see 'plot_results.py', and also the original TD3 paper. To generate the plots yourself:
 ```
 python plot_results.py
 ```
-Details of how the plots were generated can be found in the [TD3 paper](https://arxiv.org/abs/1802.09477) figure 5, and [original README file](README_orig.md). In the TD3 paper, the authors mentioned that "[c]urves are smoothed uniformly for visual clarity", so I used `scipy.ndimage.uniform_filter(data, size=7)` -- the window size was chosen arbitrarily by me.
 
 ## Pre-trained models
 Pre-trained models can be downloaded from [here](https://drive.google.com/open?id=1x88F-Uop6zCI0jnY8F4E9TsKsXCtq-fL).
