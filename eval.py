@@ -23,7 +23,7 @@ def evaluate_policy(policy, eval_episodes=1, visualize=False):
 			obs, reward, done, _ = env.step(action)
 			if visualize:
 				env.render(mode="human")
-				time.sleep(1./60.)  # not sure why visualization makes this hang...
+				time.sleep(1./60.)
 			avg_reward += reward
 
 	avg_reward /= eval_episodes
