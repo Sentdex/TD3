@@ -9,9 +9,11 @@ This repo contains benchmark results for TD3 and DDPG using the [PyBullet](https
 * Reacher
 * Walker2D
 
-In the [TD3 paper](https://arxiv.org/abs/1802.09477), results were reported for the [MuJoCo](http://www.mujoco.org/) version of these environments. PyBullet is a free and open-source alternative to MuJoCo, with no license fees and no hardware lock (MuJoCo personal licenses are limited to 3 physical machines, which means you cannot run simulations in the cloud, e.g. AWS/GCP/etc).
+In the [TD3 paper](https://arxiv.org/abs/1802.09477) by Fujimoto et al., results were reported for the [MuJoCo](http://www.mujoco.org/) version of these environments. PyBullet is a free and open-source alternative to MuJoCo, with no license fees and no hardware lock (MuJoCo personal licenses are limited to 3 physical machines, which means you cannot run simulations in the cloud, e.g. AWS/GCP/etc).
 
-This repo itself is a fork of the [official TD3 code](https://github.com/sfujim/TD3/) from the original authors of TD3. Per the original repo, results were generated with Python 2.7 and PyTorch 0.4. Specific to this repo, PyBullet 2.4.8 was used. To obtain these results, run:
+**This repo itself is a fork of the [official TD3 code](https://github.com/sfujim/TD3/) from the original authors of TD3, Fujimoto et al. All results presented here are derived using the original authors' algorithm implementations.** Thus, references to "TD3", "OurDDPG", and "DDPG" below refer to Fujimoto et al's implementations.
+
+Per the original repo, results were generated with Python 2.7 and PyTorch 0.4. Specific to this repo, PyBullet 2.4.8 was used. To obtain these results, run:
 ```
 ./run_experiments.sh
 ```
