@@ -2,7 +2,7 @@
 
 Attempting to train the Bittle robot dog to walk with reinforcement learning.
 
-<img src="./bittlebots.gif">
+<img src="./bittlebots.gif" height="500">
 
 **Forked TD3 benchmarking with a few files added:**
 
