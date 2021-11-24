@@ -2,6 +2,8 @@
 
 Attempting to train the Bittle robot dog to walk with reinforcement learning.
 
+<img src="./bittlebots.gif">
+
 **Forked TD3 benchmarking with a few files added:**
 
 These files are modified to work with the Isaac Sim env for the Bittle robot. 
