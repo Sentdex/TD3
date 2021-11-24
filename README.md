@@ -1,7 +1,7 @@
 # TD3 applied to the Bittle robot in Isaac Sim
 
 Attempting to train the Bittle robot dog to walk with reinforcement learning.
-
+Current model performance:
 <img src="./bittlebots.gif" height="500">
 
 **Forked TD3 benchmarking with a few files added:**
