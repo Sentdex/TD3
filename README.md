@@ -1,3 +1,21 @@
+# Forked TD3 benchmarking with 2 files added:
+
+TD3-Bittle-16-1.py & TD3_4.py
+
+These files are modified to work with the Isaac Sim env for the Bittle robot. 
+
+There are probably mistakes/errors/redundant/useless bits of code, I am just sharing where I am so far JIC anyone wishes to try their hand :P PRs welcome. 
+
+To actually run, you need to use the Omni version of python. You can either do this via shebang at the top or by placing my 2 edited files in the omniverse directory. For example, my files are located in here: `/home/h/.local/share/ov/pkg/isaac_sim-2021.1.1/TD3-Bittle-9/`
+
+
+
+
+
+
+# Original Readme:
+
+
 # Benchmarking TD3 and DDPG on PyBullet
 
 This repo contains benchmark results for TD3 and DDPG using the [PyBullet](https://docs.google.com/document/d/10sXEhzFRSnvFcl3XxNGhnD4N2SedqwdAvK3dsihxVUA/edit#) reinforcement learning environments:
