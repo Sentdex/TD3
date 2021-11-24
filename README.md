@@ -6,7 +6,9 @@ Current model performance:
 
 **Forked TD3 benchmarking with a few files added:**
 
-These files are modified to work with the Isaac Sim env for the Bittle robot. 
+These files are modified to work with the Isaac Sim env for the Bittle robot. More info on all of this can be found on the videos that cover my attempts here:
+1. Can we simulate a real robot?: https://www.youtube.com/watch?v=phTnbmXM06g
+
 
 There are probably mistakes/errors/redundant/useless bits of code, I am just sharing where I am so far JIC anyone wishes to try their hand :P PRs welcome. 
 
