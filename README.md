@@ -20,4 +20,5 @@ To actually run, you need to use the Omni version of Python. You can either do t
 4. `20-Bittles-very-long-6.usd` One version of a scene that's used to play the model. Feel free to make your own from here in the sim. Should be located in the `Isaac` directory of the omniverse directory.
 5. `20-Bittles-very-long.usd` Used for training, mostly so Bittles don't run into eachother in training. There's a way to make them clip eachother, I just don't know it ATM. Should be located in the `Isaac` directory of the omniverse directory.
 6. `Play-TD3-Bittle-MANY.py` This is used to play models, essentially just keep exploiting.
+7. `graph_reward.py` Used to graph the rewards of the exploration and exploiting agents live while training.
 
