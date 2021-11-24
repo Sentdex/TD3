@@ -1,4 +1,6 @@
-# Forked TD3 benchmarking with 2 files added:
+# TD3 applied to the Bittle robot in Isaac Sim
+
+Forked TD3 benchmarking with 2 files added:
 
 TD3-Bittle-16-1.py & TD3_4.py
 
