@@ -15,7 +15,7 @@ To actually run, you need to use the Omni version of Python. You can either do t
 1. `TD3-Bittle-16-1.py` This is the main training file. 
 2. `TD3_4.py` This is the modified version of the TD3 model. Just a larger model.
 3. `Models` directory, this contains the best TD3 model so far. You can run it, or attempt to train from here.
-4. `20-Bittles-very-long-6.usd` One version of a scene that's used to play the model. Feel free to make your own from here in the sim. 
-5. `20-Bittles-very-long.usd` Used for training, mostly so Bittles don't run into eachother in training. There's a way to make them clip eachother, I just don't know it ATM. 
+4. `20-Bittles-very-long-6.usd` One version of a scene that's used to play the model. Feel free to make your own from here in the sim. Should be located in the `Isaac` directory of the omniverse directory.
+5. `20-Bittles-very-long.usd` Used for training, mostly so Bittles don't run into eachother in training. There's a way to make them clip eachother, I just don't know it ATM. Should be located in the `Isaac` directory of the omniverse directory.
 6. `Play-TD3-Bittle-MANY.py` This is used to play models, essentially just keep exploiting.
 
